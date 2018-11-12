@@ -1,0 +1,59 @@
+exports.run = (client, message, args) => {
+    const { RichEmbed } = require('discord.js');
+const db = require("quick.db")
+const sleep = require("sleep")
+const randoms = Math.floor(Math.random() * 2)
+
+let user = message.author
+    
+var embed = new RichEmbed()
+    .setColor("RANDOM")
+    .setTitle(':bank: Rolling...')
+    .setDescription(`Wait :o`)
+db.fetch(`G_${message.guild.id}_${user.id}`, {target: "money"}).then(i => {
+   message.channel.send(embed).then(m => {
+   sleep.sleep(2)
+    m.delete().then().catch(console.error);
+        if(!args[0]){
+            var embed = new RichEmbed()
+            .setColor("RANDOM")
+            .setTitle(':bank: The Bank')
+            .setDescription(`Supply number.`)
+         return message.channel.send(embed)
+    }
+       
+        if(i < args[0]){
+            var embed = new RichEmbed()
+            .setColor("RANDOM")
+            .setTitle(':bank: The Bank')
+            .setDescription(`You don't have `+ args[0] + " :dollar:")
+            return message.channel.send(embed)
+        }
+    
+        if(randoms == "1"){
+            let kk = args[0]
+            let ok = args[0] + randoms
+            const random = Math.floor(Math.random() * ok);
+            const hi = Math.floor(Math.random() * 10);
+            db.add(`G_${message.guild.id}_${user.id}`, parseInt(random), {target: "money"}).then(money => {
+            var embedS = new RichEmbed()
+               .setColor("RANDOM")
+               .setTitle(':bank: The Bank')
+               .setDescription(`The random gave you :dollar: ${random} \nYou now have :dollar: ${money}`);//.toLocaleString()
+            message.channel.send(embedS)
+        });
+        
+        }
+        else{
+            db.add(`G_${message.guild.id}_${user.id}`,-parseInt(args[0]),  {target: "money"}).then(money => {
+              message.channel.send(":bank: Invisible bank", 'You lose :dollar: ' + args[0] + '\nYou now have :dollar: ' + money)//.toLocaleString()
+            })
+        }
+    
+    })
+    })
+    
+    }  
+exports.conf = {
+aliases: [""]
+}

@@ -1,0 +1,17 @@
+const Discord = require(`discord.js`);
+const db = require(`quick.db`);
+exports.run = async (client, channel) => {
+  
+   let channelspam = await db.fetch(`logsChannel_${channel.guild.id}`) // Fetch Welcome/Leaving Channel
+        if (!channelspam) return; // If Welcome/Leaving Channel Is Existent
+
+        if (!channel.guild.channels.get(channelspam)) return // If Channel Welcome/Leave Exists Within Guild As A Channel
+        let channeled = channel.guild.channels.get(channelspam) // Grabs Channel ID Enabling Input Of Server
+
+	const cembed = new Discord.RichEmbed()
+		.setTitle("Channel Created")
+		.setColor("RANDOM")
+		.setDescription(`A **${channel.type} channel**, by the name of **${channel.name}**, was just created!`)
+		.setTimestamp(new Date());
+  channeled.send(cembed)
+}
