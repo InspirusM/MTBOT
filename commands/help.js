@@ -25,7 +25,7 @@ return msg.channel.send(funembed);
 else if (`${args[1]}` == `3`) {
 let utilityembed = new Discord.RichEmbed()
 .setTitle(`All Utility Commands Listed Below!`)
-.setDescription(`**__${prefix}tcreate__** **Usage: ${prefix}tcreate Description: Opens A Ticket For Support**\n\n**__${prefix}tclose__** **Usage: ${prefix}tclose Description: Close The Opened Ticket**\n\n**__${prefix}setupchannel__** **Usage: ${prefix}setupchannel Description: Create Channels For Server**\n\n**__${prefix}setuprole__** **Usage: ${prefix}setuprole Description: Create Roles For Server**\n\n**__${prefix}__** **Usage: ${prefix}emoji emojiname Description: To Find Emoji By Name**`)
+.setDescription(`**__${prefix}tcreate__** **Usage: ${prefix}tcreate Description: Opens A Ticket For Support**\n\n**__${prefix}tclose__** **Usage: ${prefix}tclose Description: Close The Opened Ticket**\n\n**__${prefix}setupchannel__** **Usage: ${prefix}setupchannel Description: Create Channels For Server**\n\n**__${prefix}setuprole__** **Usage: ${prefix}setuprole Description: Create Roles For Server**\n\n**__${prefix}emoji__** **Usage: ${prefix}emoji emojiname Description: To Find Emoji By Name**`)
 .setColor(`#ff6a00`);
 return msg.channel.send(utilityembed);
 }
