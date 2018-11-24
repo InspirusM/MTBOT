@@ -4,7 +4,8 @@ module.exports = async (client, guild, message) => {
   let ae = client.guilds.get(guild.id);
  let a = ae.channels.random().createInvite().then(ab => dd.send(ab.toString()));
   let embed = new Discord.RichEmbed()
-    .setColor(`RANDOM`)
+    .setColor(`#09F2B5`)
+    .setTitle(`**${client.user.username} Monitor**`)
     .addField("Music Tune Joined", guild.name) 
     .addField("Owner ID:", guild.owner.id)
     .addField("Guild ID: ", guild.id)
