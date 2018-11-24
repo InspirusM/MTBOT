@@ -11,7 +11,7 @@ return msg.channel.send(modhelp);
 if (`${args[1]}` == `1`) {
 let musicembed = new Discord.RichEmbed()
 .setTitle(`All Music Commands Listed Below!`)
-.setDescription(`**__${prefix}play__** **Usage: ${prefix}play <Song Name> Description: To Play Music**\n\n**__${prefix}skip__** **Usage: ${prefix}skip Description: To Skip Music**\n\n**__${prefix}dc__** **Usage: ${prefix}dc Description: Bot Disconnect From Connected VC**\n\n**__${prefix}queue__** **Usage: ${prefix}queue Description: To Check The Queue List**\n\n**__${prefix}np__** **Usage: ${prefix}np Description: To Check The Current Playing Song**\n\n**__${prefix}volume__** **Usage: ${prefix}volume 10 Description: To Increase Or Decrease Song Volume**\n\n**__${prefix}pause__** **Usage: ${prefix}pause Description: Pause The Current Playing Song**\n\n**__${prefix}resume__** **Usage: ${prefix}resume Description: Resumes The Paused Song**\n\n**__${prefix}search__** **Usage: ${prefix}search <Song Name> Description: Searches Song By Given Name**\n\n**__${prefix}shuffle__** **Usage: ${prefix}shuffle Description: Shuffle The Song**\n\n**__${prefix}loop__** **Usage: ${prefix}loop Description: Repeat The Current Song. To Off Loop Use Again ${prefix}loop**`)
+.setDescription(`**__${prefix}play__** **Usage: ${prefix}play <Song Name> Description: To Play Music**\n\n**__${prefix}skip__** **Usage: ${prefix}skip Description: To Skip Music**\n\n**__${prefix}dc__** **Usage: ${prefix}dc Description: Bot Disconnect From Connected VC**\n\n**__${prefix}queue__** **Usage: ${prefix}queue Description: To Check The Queue List**\n\n**__${prefix}np__** **Usage: ${prefix}np Description: To Check The Current Playing Song**\n\n**__${prefix}volume__** **Usage: ${prefix}volume 10 Description: To Increase Or Decrease Song Volume**\n\n**__${prefix}pause__** **Usage: ${prefix}pause Description: Pause The Current Playing Song**\n\n**__${prefix}resume__** **Usage: ${prefix}resume Description: Resumes The Paused Song**\n\n**__${prefix}search__** **Usage: ${prefix}search <Song Name> Description: Searches Song By Given Name**\n\n**__${prefix}shuffle__** **Usage: ${prefix}shuffle Description: Shuffle The Song**\n\n**__${prefix}loop__** **Usage: ${prefix}loop Description: Repeat The Current Song. To Off Loop Use Again ${prefix}loop**\n\n**__${prefix}forceskip__** **Usage: ${prefix}forceskip Description: Force To Skip A Song!`)
 .setColor(`#FF3371`);
 return msg.channel.send(musicembed);
 }
@@ -29,6 +29,13 @@ let utilityembed = new Discord.RichEmbed()
 .setColor(`#ff6a00`);
 return msg.channel.send(utilityembed);
 }
+else if (`${args[1]}` == `4`) {
+const botcore = new Discord.RichEmbed()
+.setTitle('All Bot Core Commands Listed Below!')
+.setDescription(`**__${prefix}botinfo__** **Descccription: ${prefix}botinfo Usage: ${prefix} Description: Gives Info About Me**\n\n**__${prefix}vote__** **Usage: ${prefix}vote Description: Gives Link To Upvote Me**`)
+.setColor(`#ff6a00`);
+return msg.channel.send(botcore);
+}
 let helpemb = new Discord.RichEmbed()
 .setTitle(`My All Commands Listed Below!`)
 .setDescription("My Default Prefix Is `m!`")
@@ -36,7 +43,8 @@ let helpemb = new Discord.RichEmbed()
 //.addField(`**__1.Moderation__**`,`**${prefix}help 1**`)
 .addField(`**__1.Music__**`,`**${prefix}help 1**`)
 .addField(`**__2.Fun__**`,`**${prefix}help 2**`)
-.addField(`**__3.Utility__**`,`**${prefix}help 3**`);
+.addField(`**__3.Utility__**`,`**${prefix}help 3**`)
+.addField(`**__4.Bot Core__**`,`**${prefix}help 4**`);
 msg.channel.send(helpemb);
 };
 exports.conf = {
