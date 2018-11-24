@@ -39,6 +39,11 @@ dbl.on('error', e => {
  console.log(`Oops! ${e}`);
 }); 
 
+const DiscordBoats = require("dboats-api");
+const boats = new DiscordBoats({token: "CwLQ6jedULP0mh444LLzjLydSe6Xzz"});
+
+boats.postGuilds(client.guilds.size).then(() => console.log("Posted guild count on https://discordboats.club/bot/489076647727857685"));
+
 // event handler 
 fs.readdir("./events/", (err, files) => {
 if (err) console.log(err);
@@ -106,7 +111,7 @@ if(msg.content === prefix) return;
 
   } catch (e) {
     console.log(e.message)                                                                  
-    client.channels.get('509187565182517250').send(`**ERROR**\n\`\`\`ini\n${e.stack}\`\`\``)
+    client.channels.get('509187565182517250').send(`**ERROR**\n\`\`\`in\n${e}\`\`\``)
   } finally {
    console.log(`${msg.author.tag} Used
 ${command} In Guild ${msg.guild.name} ID (${msg.guild.id})`)
