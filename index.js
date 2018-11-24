@@ -63,10 +63,7 @@ client.on('message', async msg => { // eslint-disable-line
   //prefix 
 
 var prefix = 'm!';
-    var fetchedPrefix = await db.fetch(`serverPrefix_${msg.guild.id}`);
-    if (fetchedPrefix === null) fetchedPrefix = prefix;
-    else prefix = fetchedPrefix;
-  
+	
   if (!msg.guild) return;
 
 	if (msg.author.bot) return undefined;
