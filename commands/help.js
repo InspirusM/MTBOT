@@ -32,7 +32,7 @@ return msg.channel.send(utilityembed);
 else if (`${args[1]}` == `4`) {
 const botcore = new Discord.RichEmbed()
 .setTitle('All Bot Core Commands Listed Below!')
-.setDescription(`**__${prefix}botinfo__** **Descccription: ${prefix}botinfo Usage: ${prefix} Description: Gives Info About Me**\n\n**__${prefix}vote__** **Usage: ${prefix}vote Description: Gives Link To Upvote Me**`)
+.setDescription(`**__${prefix}botinfo__** **Description: ${prefix}botinfo Usage: ${prefix} Description: Gives Info About Me**\n\n**__${prefix}vote__** **Usage: ${prefix}vote Description: Gives Link To Upvote Me**`)
 .setColor(`#ff6a00`);
 return msg.channel.send(botcore);
 }
@@ -44,7 +44,8 @@ let helpemb = new Discord.RichEmbed()
 .addField(`**__1.Music__**`,`**${prefix}help 1**`)
 .addField(`**__2.Fun__**`,`**${prefix}help 2**`)
 .addField(`**__3.Utility__**`,`**${prefix}help 3**`)
-.addField(`**__4.Bot Core__**`,`**${prefix}help 4**`);
+.addField(`**__4.Bot Core__**`,`**${prefix}help 4**`)
+.addField(`**Want To Upvote Me On DBL**`,`**[Click Me To Upvote On DBL](https://discordbots.org/bot/489076647727857685/vote)`);
 msg.channel.send(helpemb);
 };
 exports.conf = {
