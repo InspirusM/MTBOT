@@ -9,9 +9,6 @@ exports.run = async (client, msg, args) => {
 }
 
 exports.conf = {
-   aliases: ['leave', 'dc']
+   aliases: ['leave', 'dc','stop']
 }
-
-exports.help = {
-  name: 'disconnect' 
-} 
+ 
