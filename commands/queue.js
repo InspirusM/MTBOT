@@ -40,7 +40,7 @@ exports.run = async (client, msg, args) => {
 				});
 			}
 		}else{
-			embed.setDescription(queues.map((x, i) => `\`${i +1}\`. __**[${x.title}](${x.url})**__ **by** ${x.author.toString()}`).join('\n'));
+			embed.setDescription(queues.map((x, i) => `\`${i +1}\`. __**[${x.title}](${x.url})**__ **by** ${x.author}`).join('\n'));
 			return msg.channel.send(`🎶 ** | Now playing ${serverQueue.songs[0].title}**`, {embed: embed});
 		}
 	}catch(e){
