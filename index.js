@@ -27,6 +27,18 @@ const youtube = new YouTube(process.env.YOUTUBE_API_KEY);
 
 const queue = new Map();
 
+  // DBL post
+const DBL = require("dblapi.js");
+const dbl = new DBL(process.env.DBL_TOKEN, client);
+
+dbl.on('posted', () => {
+  console.log('Server count on DBL posted!');
+});
+ 
+dbl.on('error', e => {
+ console.log(`Oops! ${e}`);
+}); 
+
 // event handler 
 fs.readdir("./events/", (err, files) => {
 if (err) console.log(err);
