@@ -11,7 +11,7 @@ exports.run = async (client, msg, args) => {
 } 
 
 exports.conf = {
-   aliases: ['s']
+   aliases: ['s','skp']
 }
 
 exports.help = {
