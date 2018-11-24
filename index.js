@@ -75,7 +75,7 @@ client.on('message', async msg => { // eslint-disable-line
   //prefix 
 
 var prefix = 'm!';
-	
+if(msg.content === prefix) return;
   if (!msg.guild) return;
 
 	if (msg.author.bot) return undefined;
